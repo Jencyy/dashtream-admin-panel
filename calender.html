@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calender</title>
+</head>
+<!-- font awesome -->
+<link href="css/all.min.css" rel="stylesheet">
+<!-- favicon -->
+<link href="images/favicon.ico" rel="icon">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<!-- costom css -->
+<link href="css/calender.css" rel="stylesheet">
+<!-- media css -->
+<link href="css/media.css" rel="stylesheet">
+
+<body>
+
+    <div class="side-bar display-xs-none display-s-none display-l-block  display-xl-block">
+        <div class="sidebar-header text-center d-flex Justify-center">
+            <a class="d-flex align-center Justify-evenly" href="index.html">
+                <img src="images/logo-icon.png">
+                <h5 class="logo-text">Dashtreme Admin</h5>
+            </a>
+        </div>
+        <div class="side-menu-head">MAIN NAVIGATION</div>
+        <ul class="sider-nav">
+
+            <li class="active">
+                <a href="index.html">
+                    <i class="zmdi zmdi-view-dashboard zmdi-hc-2x"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="zmdi zmdi-invert-colors zmdi-hc-2x"></i>
+                    <span>UI icons</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class=" zmdi zmdi-format-list-bulleted zmdi-hc-2x"></i>
+                    <span>Forms</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="zmdi zmdi-grid zmdi-hc-2x"></i>
+                    <span>Tables</span>
+                </a>
+            </li>
+            <li>
+                <a href="calender.html" class="p-rel d-flex align-center">
+                    <i class="zmdi zmdi-calendar-check zmdi-hc-2x"></i>
+                    <span>Calender</span>
+                    <small class="new f-right p-abs">New</small>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="zmdi zmdi-face zmdi-hc-2x"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="zmdi zmdi-lock zmdi-hc-2x" ]></i>
+                    <span>Login</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="zmdi zmdi-account-circle zmdi-hc-2x"></i>
+                    <span>Registration</span>
+                </a>
+            </li>
+        </ul>
+        <div class="side-menu-head">LABELS</div>
+        <ul class="sider-nav">
+            <li>
+                <a href="#">
+                    <i class="zmdi zmdi-coffee text-danger zmdi-hc-2x"></i>
+                    <span>Important</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="zmdi zmdi-chart-donut text-success zmdi-hc-2x"></i>
+                    <span>Warning</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class=" zmdi zmdi-share text-info zmdi-hc-2x"></i>
+                    <span>Information</span>
+                </a>
+            </li>
+
+    </div>
+    <div class="main-wrapper">
+        <header>
+            <div class="container">
+                <div class="row Justify-between">
+                    <div class="left d-flex ">
+
+                        <div class="d-flex flex-grow">
+
+                            <div class="d-flex align-center">
+                                <img src="images/bars.png" alt="bars" class="burger">
+
+                                <div class="search-bar d-flex align-center">
+                                    <input type="text" placeholder="Enter key-worlds">
+                                    <img src="images/magnifier.png">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="right w-4  w-xs-2  d-flex align-center">
+                        <div class="header-nav  d-flex align-center display-xs-none">
+                            <i class="fa-solid fa-envelope-open fa-xl" style="color: #ffffff;"></i>
+                            <i class="fa-regular fa-bell fa-xl" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-flag fa-xl" style="color: #ffffff;"></i>
+                        </div>
+                        <div class="profile d-flex align-center">
+                            <img src="images/jency.jpg" alt="profile">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </header>
+
+        <main class=" w-xs-12  ">
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="container">
+                        <div id='calendar'></div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+</body>
+<script src="js/jquery.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+<script>
+    $(document).ready(function () {
+        $('.burger').click(function () {
+
+            $('.side-bar').toggleClass('vanish');
+            $('.main-wrapper').toggleClass('vanish');
+            // $('.side-bar').toggleClass('sidebar-80');
+
+        });
+
+    });
+</script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth'
+        });
+        calendar.render();
+    });
+
+</script>
+
+</html>
